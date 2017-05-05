@@ -1,0 +1,11 @@
+﻿  Source.cpp
+c:\users\timothy\desktop\final-project-cs172\final project\final project\source.cpp(22): warning C4018: '<': signed/unsigned mismatch
+c:\users\timothy\desktop\final-project-cs172\final project\final project\source.cpp(40): warning C4018: '<': signed/unsigned mismatch
+c:\users\timothy\desktop\final-project-cs172\final project\final project\source.cpp(59): warning C4018: '<': signed/unsigned mismatch
+c:\users\timothy\desktop\final-project-cs172\final project\final project\source.cpp(72): warning C4018: '<': signed/unsigned mismatch
+c:\users\timothy\desktop\final-project-cs172\final project\final project\source.cpp(115): warning C4018: '<': signed/unsigned mismatch
+c:\users\timothy\desktop\final-project-cs172\final project\final project\source.cpp(126): warning C4018: '<': signed/unsigned mismatch
+c:\users\timothy\desktop\final-project-cs172\final project\final project\source.cpp(147): warning C4018: '<': signed/unsigned mismatch
+c:\users\timothy\desktop\final-project-cs172\final project\final project\source.cpp(151): warning C4018: '<': signed/unsigned mismatch
+  Final Project.vcxproj -> C:\Users\Timothy\Desktop\Final-Project-CS172\Final Project\Debug\Final Project.exe
+  Final Project.vcxproj -> C:\Users\Timothy\Desktop\Final-Project-CS172\Final Project\Debug\Final Project.pdb (Partial PDB)
