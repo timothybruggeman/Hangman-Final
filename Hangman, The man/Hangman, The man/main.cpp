@@ -14,16 +14,16 @@ void hangman(int& PENALTY);
 	/////////////////////////////////////////////////
 	//Example of a word. This will either be randomly selected from the txt file or cin by a second player and then clear screened.
 	//I chose this case so we can see what happens with the apostrophe.
-	string word = "they'll";
+	string word = "shouldn't";
  
 	//Example to open file for word selection:
 	ifstream file;
 	file.open("words_no_numbers.txt");
 	if (!file.is_open()) cout << "NOPE";
-	while (file >> word)
+	/*while (file >> word)
 	{
 	cout << word << '\n';
-	}
+	}*/
 
 ////////////////////////////////////////////////
 
@@ -47,7 +47,7 @@ int PENALTY = 0;
 //
 
 //Displaying initial screen
-cout << "May the odds be ever in your favor" << "\n\n\n";
+cout << "Welcome to hangman...May the odds be ever in your favor." << "\n\n" << "START" << endl << endl;
 for (int i = 0; i < displayWord.size(); i++) {
     cout << displayWord[i] << " ";
 }
@@ -146,44 +146,59 @@ bool isValidLetter(vector<char> Word, vector<char> displayWord, char guessedLett
 
 void hangman(int& PENALTY)
 {
-    if ( PENALTY == 1)
+    string head = "|   O", body = "|   |", rightArmLeg = "|   |_", bothArmsLegs = "|  _|_", top = "_____", emptyRope = "|   |", emptyWood = "|";
+    
+    if ( PENALTY == 0 )
     {
-        cout << " O     Number of attempts remaining: #7" << endl << endl;
+        cout << top << endl << emptyRope << endl;
+        
+        for ( int i = 0; i < 5; i++ )
+        {
+            cout << emptyWood << endl;
+        }
     }
     
-    else if ( PENALTY == 2 )
+    else if ( PENALTY == 1 || PENALTY == 2)
     {
-        cout << " O      Number of attempts remaining: #6" << endl << " | " << endl << endl;
+        cout << top << endl << emptyRope << endl << head << endl;
+        if ( PENALTY == 2 )
+        {
+            cout << body << endl << emptyWood << endl << emptyWood << endl << emptyWood << endl << endl;
+        }
+        else
+        {
+            cout << emptyWood << endl << emptyWood << endl << emptyWood << endl << emptyWood << endl;
+        }
     }
     
     else if ( PENALTY == 3 )
     {
-        cout << " O      Number of attempts remaining: #5" << endl << " | " << endl << " | " << endl << endl;
+        cout << top << endl << emptyRope << endl << head << endl << rightArmLeg << endl << emptyWood << endl << emptyWood << endl << emptyWood << endl;
     }
     
     else if ( PENALTY == 4 )
     {
-        cout << " O      Number of attempts remaining: #4" << endl << " |_ " << endl << " | " << endl << endl;
+        cout << top << endl << emptyRope << endl << head << endl << bothArmsLegs << endl << emptyWood << endl << emptyWood << endl << emptyWood << endl;
     }
     
     else if ( PENALTY == 5 )
     {
-        cout << "  O      Number of attempts remaining: #3" << endl << " _|_ " << endl << "  | " << endl << endl;
+        cout << top << endl << emptyRope << endl << head << endl << bothArmsLegs << endl << body << endl << emptyWood << endl << emptyWood << endl;
     }
     
     else if ( PENALTY == 6 )
     {
-        cout << "  O      Number of attempts remaining: #2" << endl << " _|_ " << endl << "  | " << endl << "  | " << endl << endl;
+        cout << top << endl << emptyRope << endl << head << endl << bothArmsLegs << endl << body << endl << body << endl << emptyWood << endl;
     }
     
     else if ( PENALTY == 7 )
     {
-        cout << "  O      Number of attempts remaining: #1" << endl << " _|_ " << endl << "  | " << endl << " _| " << endl << endl;
+        cout << top << endl << emptyRope << endl << head << endl << bothArmsLegs << endl << body << endl << rightArmLeg << endl << emptyWood << endl;
     }
     
     else if ( PENALTY >= 8 )
     {
-        cout << "  O      Number of attempts remaining: #0" << endl << " _|_ " << endl << "  | " << endl << " _|_ " << endl << endl;
+        cout << top << endl << emptyRope << endl << head << endl << bothArmsLegs << endl << body << endl << bothArmsLegs << endl << emptyWood << endl;
     }
 }
 
